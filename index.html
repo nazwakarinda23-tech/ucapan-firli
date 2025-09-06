@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ucapan Ulang Tahun</title>
+  <style>
+    body {
+      background-color: #6c72dc;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 50px;
+      margin-bottom: 100px; /* jarak agar lilin tidak menyentuh tulisan */
+    }
+
+    /* ================== KUE ================== */
+    .cake {
+      position: relative;
+      margin: 0 auto;
+      width: 220px;
+    }
+
+    .plate {
+      width: 260px;
+      height: 25px;
+      background: radial-gradient(circle at center, #ddd, #bbb);
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    .layer {
+      width: 220px;
+      height: 60px;
+      background: linear-gradient(to bottom, #8b4513, #5a2e0c);
+      border-radius: 15px;
+      margin: 0 auto;
+      box-shadow: inset 0 -8px rgba(0,0,0,0.3);
+    }
+
+    .layer.top {
+      background: linear-gradient(to bottom, #b5651d, #8b4513);
+      border-radius: 20px 20px 15px 15px;
+      margin-top: -10px;
+    }
+
+    .icing {
+      width: 220px;
+      height: 40px;
+      background: linear-gradient(to bottom, #fff, #eee);
+      border-radius: 20px 20px 0 0;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      box-shadow: inset 0 -6px rgba(0,0,0,0.2);
+    }
+
+    /* Sprinkle */
+    .sprinkle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+    }
+    .red { background: red; left: 30px; }
+    .green { background: lime; left: 70px; }
+    .blue { background: blue; left: 110px; }
+    .yellow { background: yellow; left: 150px; }
+    .pink { background: hotpink; left: 190px; }
+
+    /* Ceri */
+    .cherry {
+      width: 18px;
+      height: 18px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      top: -12px;
+      left: 100px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    .cherry::after {
+      content: "";
+      width: 2px;
+      height: 15px;
+      background: green;
+      position: absolute;
+      top: -15px;
+      left: 8px;
+      border-radius: 2px;
+    }
+
+    /* Lilin */
+    .candle {
+      width: 20px;
+      height: 60px;
+      background: white;
+      border-radius: 10px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 3;
+      box-shadow: 0 0 8px rgba(255,255,255,0.7);
+    }
+
+    .flame {
+      width: 20px;
+      height: 30px;
+      background: radial-gradient(circle at 50% 60%, gold, orange, transparent);
+      border-radius: 50% 50% 50% 50%;
+      position: absolute;
+      top: -28px;
+      left: 0;
+      animation: flicker 1s infinite;
+      box-shadow: 0 0 20px 8px orange;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* ================== UCAPAN ================== */
+    .message {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    /* Tombol */
+    .music-controls, .celebrate {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #ffcc00;
+      color: black;
+      cursor: pointer;
+      margin: 5px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    button:hover {
+      background: #ffdb4d;
+    }
+
+    /* ================== GALERI FOTO ================== */
+    .gallery {
+      margin: 50px auto;
+      max-width: 900px;
+      padding: 10px;
+    }
+    .gallery h2 {
+      margin-bottom: 20px;
+    }
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .photos img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .photos img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      opacity: 0.8;
+      animation: fall linear forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy birthday wa pnya cowo ganteng satu-satunya🎉</h1>
+
+  <div class="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+    <div class="icing">
+      <div class="sprinkle red"></div>
+      <div class="sprinkle green"></div>
+      <div class="sprinkle blue"></div>
+      <div class="sprinkle yellow"></div>
+      <div class="sprinkle pink"></div>
+      <div class="cherry"></div>
+    </div>
+    <div class="layer top"></div>
+    <div class="layer"></div>
+    <div class="plate"></div>
+  </div>
+
+  <div class="message">
+    hallo sayangku, selamat ulang tahun MOHAMMAD FIRLI RADITIA MOKODOMPIT selamat kepala 2 sayangg<3. wa pe doa for ayang yang pertama deng paling penting semoga selalu diberikan kesehatan dan kekuatan oleh Allah, selalu dimudahkan ayang pe rezeki yang halal supaya nd ada cela untuk yang haram, selalu Allah mudahkan segala ay pe urusan dengan niat niat baik kedepannya aamiin Allahumma aamiin. Sayang terimakasih so  kuat smpe skarang yanggg..... wa tau ay smpe detik ini nd gampang apalagi posisi ay pe kerja yang jao dri rumah dg bnya faktor laeng yang kurang ay suka tapi wa bangga dari seorang firli yang dulu sllu bilang bilang mo brenti smpe skrg sbole bli apa apa pake doi sndri termasuk motor, nd cuma itu mr so bole membantu yang laeng pake ay pdoi sndri. Semoga banyak hal baik yang datang pa ay karena ay pe usaha deng kebaikan selama ini aamiin, sebenanrya kurang skli yang wa ketik ini karna ada banyakkk skli hal yang wa suka mo bilang pa ayang. Ayang tanpa ay sadari ay le sllu jdi wa pe panutan dari hal hal yang positif selalu jadi firli yang wa knal jgn pernah ba laeng dri pa wa. WA SAYANG AYANG SELAMANYA LOVE YOU MOHAMMAD FIRLIKUU HAPPY BIRTHDAY AND WISH YOU ALL THE BEST!!!!!!💖
+  </div>
+
+  <!-- Musik -->
+  <audio id="bg-music" src="instrumen birthday.mp3" autoplay loop></audio>
+  <div class="music-controls">
+    <button onclick="playMusic()">▶️ Putar Musik</button>
+    <button onclick="pauseMusic()">⏸️ Jeda Musik</button>
+  </div>
+
+  <!-- Tombol Rayakan -->
+  <div class="celebrate">
+    <button onclick="startConfetti()">🎊 Rayakan 🎊</button>
+  </div>
+
+  <!-- Galeri Foto -->
+  <div class="gallery">
+    <h2>Galeri Foto 📸</h2>
+    <div class="photos">
+      <img src="fotoayang1.jpg" alt="Foto 1">
+      <img src="fotoayang2.jpg" alt="Foto 2">
+      <img src="fotoayang3.jpg" alt="Foto 3">
+      <img src="fotoayang4.jpg" alt="Foto 4">
+      <img src="fotoayang5.jpg" alt="Foto 5">
+      <img src="fotoayang6.jpg" alt="Foto 6">
+      <img src="fotoayang7.jpg" alt="Foto 7">
+      <img src="fotoayang8.jpg" alt="Foto 8">
+    </div>
+  </div>
+
+  <script>
+    const music = document.getElementById("bg-music");
+
+    function playMusic() {
+      music.play();
+    }
+
+    function pauseMusic() {
+      music.pause();
+    }
+
+    // Confetti generator
+    function startConfetti() {
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        document.body.appendChild(confetti);
+
+        const colors = ["#ff0", "#f0f", "#0ff", "#0f0", "#f00", "#00f", "#ffa500"];
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        confetti.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 5000);
+      }
+    }
+  </script>
+
+</body>
+</html>
